@@ -10,7 +10,7 @@ import UIKit
 final class HomeTableViewController: UITableViewController {
     
     let identifier = "cell"
-    var worldCups: [WorldCup] = []
+    var worldCups: [WorldCup] = [] {didSet{updateList()}}
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ final class HomeTableViewController: UITableViewController {
         
     }
     
-    private func loadWorldCups() {
+    func loadWorldCups() {
         guard let fileURL =  Bundle.main.url(
             forResource: "winners.json", withExtension: nil) else { return }
         
@@ -34,6 +34,10 @@ final class HomeTableViewController: UITableViewController {
         }
     }
     
+    func updateList() {
+        tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return worldCups.count
@@ -41,13 +45,13 @@ final class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath)
-//        let worldCup = worldCups[indexPath.row]
-//        cell.textLabel?.text = "Copa \(worldCup.year) - \(worldCup.country)"
-//        cell.detailTextLabel?.text = "\(worldCup.winner) vs \(worldCup.vice)"
-//        cell.imageView?.image = UIImage(named: "calendar")
-        
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell {
+            
+            cell.update(word: worldCups[indexPath.row] )
+            return cell
+        }
+       
+        return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

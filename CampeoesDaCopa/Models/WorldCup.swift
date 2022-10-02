@@ -5,7 +5,7 @@
 //  Created by Leticia Speda on 26/09/22.
 //
 
-import Foundation
+import UIKit
 
 struct WorldCup: Codable {
     let year: Int

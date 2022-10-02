@@ -11,6 +11,7 @@ final class HomeTableViewCell: UITableViewCell {
     
     static let identifier = String(describing: HomeTableViewCell.self)
     
+    
     private lazy var imageCalendar: UIImageView = {
         let image = UIImage(named: "calendar")
         let view = UIImageView(image: image)
@@ -21,7 +22,7 @@ final class HomeTableViewCell: UITableViewCell {
     
     private lazy var yearsLabel: UILabel = {
         let label = UILabel()
-        label.text = "2014"
+        label.text = " "
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.enableViewCode()
         return label
@@ -44,8 +45,7 @@ final class HomeTableViewCell: UITableViewCell {
     }()
     
     private lazy var imageflag: UIImageView = {
-        let image = UIImage(named: "Alemanha Ocidental")
-        let view = UIImageView(image: image)
+        let view = UIImageView()
         view.contentMode = .scaleAspectFit
         view.enableViewCode()
         return view
@@ -53,7 +53,6 @@ final class HomeTableViewCell: UITableViewCell {
     
     private lazy var countryFlagLabel: UILabel = {
         let label = UILabel()
-        label.text = "Alemanha"
         label.textColor = #colorLiteral(red: 0.7911188006, green: 0.4011479616, blue: 0.1588954628, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.enableViewCode()
@@ -62,15 +61,13 @@ final class HomeTableViewCell: UITableViewCell {
     
     private lazy var scoreboardLabel: UILabel = {
         let label = UILabel()
-        label.text = "1(5)"
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.enableViewCode()
         return label
     }()
     
     private lazy var imageOpponentFlag: UIImageView = {
-        let image = UIImage(named: "Brasil")
-        let view = UIImageView(image: image)
+        let view = UIImageView()
         view.contentMode = .scaleAspectFit
         view.enableViewCode()
         return view
@@ -78,8 +75,7 @@ final class HomeTableViewCell: UITableViewCell {
     
     private lazy var countryOpponentFlagLabel: UILabel = {
         let label = UILabel()
-        label.text = "Brasil"
-        label.textColor = #colorLiteral(red: 0.7911188006, green: 0.4011479616, blue: 0.1588954628, alpha: 1)
+        label.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1).withAlphaComponent(0.5)
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.enableViewCode()
         return label
@@ -87,19 +83,33 @@ final class HomeTableViewCell: UITableViewCell {
     
     private lazy var scoreboardOpponentLabel: UILabel = {
         let label = UILabel()
-        label.text = "1(5)"
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.enableViewCode()
         return label
     }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override init(
+        style: UITableViewCell.CellStyle,
+        reuseIdentifier: String?
+    ) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         commonInit()
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func update(word: WorldCup) {
+        yearsLabel.text = "\(word.year)"
+        countryLabel.text = word.country
+        countryFlagLabel.text = word.winner
+        countryOpponentFlagLabel.text = word.vice
+        imageflag.image = UIImage(named: "\(word.winner).png")
+        imageOpponentFlag.image = UIImage(named: "\(word.vice).png")
+        scoreboardLabel.text = word.winnerScore
+        scoreboardOpponentLabel.text = word.viceScore
     }
     
     private func commonInit() {
@@ -208,7 +218,7 @@ final class HomeTableViewCell: UITableViewCell {
             ),
             
             scoreboardOpponentLabel.topAnchor.constraint(
-                equalTo: scoreboardLabel.bottomAnchor, constant: 10
+                equalTo: scoreboardLabel.bottomAnchor, constant: 20
             ),
             scoreboardOpponentLabel.trailingAnchor.constraint(
                 equalTo: trailingAnchor, constant: -30
@@ -226,3 +236,5 @@ extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
+
+
