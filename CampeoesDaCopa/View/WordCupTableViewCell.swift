@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class HomeTableViewCell: UITableViewCell {
+final class WordCupTableViewCell: UITableViewCell {
     
-    static let identifier = String(describing: HomeTableViewCell.self)
+    static let identifier = String(describing: WordCupTableViewCell.self)
     
     
     private lazy var imageCalendar: UIImageView = {

@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class HomeTableViewHeader: UITableViewHeaderFooterView {
+final class WorldCupTableViewHeader: UITableViewHeaderFooterView {
     
-    static let identifier = String(describing: HomeTableViewHeader.self)
+    static let identifier = String(describing: WorldCupTableViewHeader.self)
     
     private lazy var imageHeader: UIImageView = {
         let image = UIImage(named: "header")

@@ -16,8 +16,8 @@ final class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
         title = "Campeoes"
         loadWorldCups()
-        tableView.register(HomeTableViewHeader.self, forHeaderFooterViewReuseIdentifier: HomeTableViewHeader.identifier)
-        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
+        tableView.register(WorldCupTableViewHeader.self, forHeaderFooterViewReuseIdentifier: WorldCupTableViewHeader.identifier)
+        tableView.register(WordCupTableViewCell.self, forCellReuseIdentifier: WordCupTableViewCell.identifier)
         
     }
     
@@ -45,7 +45,7 @@ final class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: WordCupTableViewCell.identifier, for: indexPath) as? WordCupTableViewCell {
             
             cell.update(word: worldCups[indexPath.row] )
             return cell
@@ -55,8 +55,15 @@ final class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: HomeTableViewHeader.identifier) as? HomeTableViewHeader
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: WorldCupTableViewHeader.identifier) as? WorldCupTableViewHeader
 
         return view
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let worldCup = worldCups[indexPath.row]
+        let controller = WorldCupViewController(worldCup: worldCup)
+        present(controller, animated: true)
+    }
+    
 }
