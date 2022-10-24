@@ -115,6 +115,7 @@ final class WordCupTableViewCell: UITableViewCell {
     private func commonInit() {
         configureHierarchy()
         configureConstrainsts()
+        configureStyle()
     }
     
     private func configureHierarchy() {
@@ -228,6 +229,10 @@ final class WordCupTableViewCell: UITableViewCell {
                 equalTo: imageOpponentFlag.bottomAnchor, constant: 10
             )
         ])
+    }
+    
+    private func configureStyle() {
+        selectionStyle = .none
     }
 }
 

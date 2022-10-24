@@ -14,7 +14,7 @@ final class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Campeoes"
+        navigationItem.title = "Campeões"
         loadWorldCups()
         tableView.register(WorldCupTableViewHeader.self, forHeaderFooterViewReuseIdentifier: WorldCupTableViewHeader.identifier)
         tableView.register(WordCupTableViewCell.self, forCellReuseIdentifier: WordCupTableViewCell.identifier)
@@ -63,7 +63,9 @@ final class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let worldCup = worldCups[indexPath.row]
         let controller = WorldCupViewController(worldCup: worldCup)
-        present(controller, animated: true)
+        let navigation = UINavigationController(rootViewController: controller)
+        navigation.modalPresentationStyle = .overFullScreen
+        present(navigation, animated: true)
     }
     
 }

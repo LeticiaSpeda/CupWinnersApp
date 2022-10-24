@@ -22,8 +22,25 @@ final class WorldCupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-        print("ano da copa selecionado \(worldCup.year)")
+        commonInit()
+//        print("ano da copa selecionado \(worldCup.year)")
+        
+    }
+    private func commonInit() {
+        configureStyle()
+    }
+    private func configureStyle() {
+        view.backgroundColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "WorldCup \(worldCup.year)"
+        navigationItem.leftBarButtonItem = .init(
+            title: "Voltar", image: .init(systemName: "chevron.backward"),
+            target: self, action: #selector(backButtonAction)
+        )
+    }
+    
+    @objc private func backButtonAction() {
+        dismiss(animated: true)
     }
     
 }
