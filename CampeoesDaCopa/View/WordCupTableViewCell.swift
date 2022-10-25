@@ -23,6 +23,7 @@ final class WordCupTableViewCell: UITableViewCell {
     private lazy var yearsLabel: UILabel = {
         let label = UILabel()
         label.text = " "
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.enableViewCode()
         return label
@@ -39,6 +40,7 @@ final class WordCupTableViewCell: UITableViewCell {
     private lazy var countryLabel: UILabel = {
         let label = UILabel()
         label.text = "Brasil"
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 14, weight: .light)
         label.enableViewCode()
         return label
@@ -84,6 +86,7 @@ final class WordCupTableViewCell: UITableViewCell {
     private lazy var scoreboardOpponentLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = .black
         label.enableViewCode()
         return label
     }()
@@ -233,6 +236,7 @@ final class WordCupTableViewCell: UITableViewCell {
     
     private func configureStyle() {
         selectionStyle = .none
+        backgroundColor = .white
     }
 }
 

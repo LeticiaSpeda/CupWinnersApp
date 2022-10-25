@@ -14,11 +14,23 @@ final class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Campeões"
+        configureStyle()
         loadWorldCups()
         tableView.register(WorldCupTableViewHeader.self, forHeaderFooterViewReuseIdentifier: WorldCupTableViewHeader.identifier)
         tableView.register(WordCupTableViewCell.self, forCellReuseIdentifier: WordCupTableViewCell.identifier)
+    }
+    
+    private func configureStyle() {
+        view.backgroundColor = .white.withAlphaComponent(0.9)
+        navigationItem.title = "Campeões"
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .white.withAlphaComponent(0.5)
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
         
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     func loadWorldCups() {
@@ -67,5 +79,4 @@ final class HomeTableViewController: UITableViewController {
         navigation.modalPresentationStyle = .overFullScreen
         present(navigation, animated: true)
     }
-    
 }
