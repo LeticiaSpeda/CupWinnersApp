@@ -58,7 +58,7 @@ final class WorldCupViewController: UIViewController {
     }()
     
     
-    private lazy var descriptionWorld: UILabel = {
+    private lazy var trajectoryLabel: UILabel = {
         let label = UILabel()
         label.text = "Trajetoria do campeão"
         label.textColor = .black
@@ -66,6 +66,14 @@ final class WorldCupViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    private lazy var dividerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray.withAlphaComponent(0.2)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     //MARK: Construtor
     init(worldCup: WorldCup) {
         self.worldCup = worldCup
@@ -95,7 +103,8 @@ final class WorldCupViewController: UIViewController {
         view.addSubview(resultLabel)
         view.addSubview(nameCountry)
         view.addSubview(nameOponnentCountry)
-        view.addSubview(descriptionWorld)
+        view.addSubview(trajectoryLabel)
+        view.addSubview(dividerView)
     }
     
     private func configureConstraints() {
@@ -120,8 +129,13 @@ final class WorldCupViewController: UIViewController {
             nameOponnentCountry.topAnchor.constraint(equalTo: opponentFlagImage.bottomAnchor, constant: 10),
             nameOponnentCountry.centerXAnchor.constraint(equalTo: opponentFlagImage.centerXAnchor),
             
-            descriptionWorld.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 60),
-            descriptionWorld.centerXAnchor.constraint(equalTo: resultLabel.centerXAnchor)
+            trajectoryLabel.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 60),
+            trajectoryLabel.centerXAnchor.constraint(equalTo: resultLabel.centerXAnchor),
+            
+            dividerView.topAnchor.constraint(equalTo: trajectoryLabel.bottomAnchor, constant: 12),
+            dividerView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            dividerView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            dividerView.heightAnchor.constraint(equalToConstant: 2)
         ])
     }
     
