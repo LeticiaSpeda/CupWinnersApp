@@ -12,14 +12,14 @@ final class WorldCupViewController: UIViewController {
     var worldCup: WorldCup
     
     private lazy var flagImage: UIImageView = {
-        let image = UIImage(named: "Brasil")
+        let image = UIImage(named: "\(worldCup.winner)")
         let imageview = UIImageView(image: image)
         imageview.translatesAutoresizingMaskIntoConstraints = false
         return imageview
     }()
     
     private lazy var opponentFlagImage: UIImageView = {
-        let image = UIImage(named: "Bolívia")
+        let image = UIImage(named: "\(worldCup.vice)")
         let imageview = UIImageView(image: image)
         imageview.translatesAutoresizingMaskIntoConstraints = false
         return imageview
@@ -27,7 +27,8 @@ final class WorldCupViewController: UIViewController {
     
     private lazy var resultLabel: UILabel = {
         let label = UILabel()
-        label.text = "1 x 0"
+        label.text = "\(worldCup.winnerScore) x \(worldCup.viceScore)"
+        label.textAlignment = .center
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -36,7 +37,9 @@ final class WorldCupViewController: UIViewController {
     
     private lazy var nameCountry: UILabel = {
         let label = UILabel()
-        label.text = "Brasil"
+        label.text = "\(worldCup.winner)"
+        label.numberOfLines = 2
+        label.textAlignment = .center
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +48,9 @@ final class WorldCupViewController: UIViewController {
     
     private lazy var nameOponnentCountry: UILabel = {
         let label = UILabel()
-        label.text = "Bolivia"
+        label.text = " \(worldCup.vice) "
+        label.numberOfLines = 2
+        label.textAlignment = .center
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -96,19 +101,18 @@ final class WorldCupViewController: UIViewController {
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             flagImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 28),
-            flagImage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            flagImage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40),
             flagImage.heightAnchor.constraint(equalToConstant: 58),
             flagImage.widthAnchor.constraint(equalToConstant: 84),
             
-            
             opponentFlagImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 28),
-            opponentFlagImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            opponentFlagImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40),
             opponentFlagImage.heightAnchor.constraint(equalToConstant: 58),
             opponentFlagImage.widthAnchor.constraint(equalToConstant: 84),
-            
+
             resultLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 46),
-            resultLabel.leftAnchor.constraint(equalTo: flagImage.rightAnchor, constant: 60),
-            resultLabel.rightAnchor.constraint(equalTo: opponentFlagImage.leftAnchor, constant: -60),
+            resultLabel.leftAnchor.constraint(equalTo: flagImage.rightAnchor, constant: 50),
+            resultLabel.rightAnchor.constraint(equalTo: opponentFlagImage.leftAnchor, constant: -50),
             
             nameCountry.topAnchor.constraint(equalTo: flagImage.bottomAnchor, constant: 10),
             nameCountry.centerXAnchor.constraint(equalTo: flagImage.centerXAnchor),
