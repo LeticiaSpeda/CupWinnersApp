@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class WordCupTableViewCell: UITableViewCell {
+final class WorldCupTableViewCell: UITableViewCell {
     
-    static let identifier = String(describing: WordCupTableViewCell.self)
+    static let identifier = String(describing: WorldCupTableViewCell.self)
     
-    
+    //MARK: Components
     private lazy var imageCalendar: UIImageView = {
         let image = UIImage(named: "calendar")
         let view = UIImageView(image: image)
@@ -90,6 +90,7 @@ final class WordCupTableViewCell: UITableViewCell {
         label.enableViewCode()
         return label
     }()
+    //MARK: Construtor
     
     override init(
         style: UITableViewCell.CellStyle,

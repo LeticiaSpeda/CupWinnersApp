@@ -17,7 +17,7 @@ final class HomeTableViewController: UITableViewController {
         configureStyle()
         loadWorldCups()
         tableView.register(WorldCupTableViewHeader.self, forHeaderFooterViewReuseIdentifier: WorldCupTableViewHeader.identifier)
-        tableView.register(WordCupTableViewCell.self, forCellReuseIdentifier: WordCupTableViewCell.identifier)
+        tableView.register(WorldCupTableViewCell.self, forCellReuseIdentifier: WorldCupTableViewCell.identifier)
     }
     
     private func configureStyle() {
@@ -57,7 +57,7 @@ final class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: WordCupTableViewCell.identifier, for: indexPath) as? WordCupTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: WorldCupTableViewCell.identifier, for: indexPath) as? WorldCupTableViewCell {
             
             cell.update(word: worldCups[indexPath.row] )
             return cell

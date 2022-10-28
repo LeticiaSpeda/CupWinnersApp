@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		E0274DAB28E5306200CF49DA /* WorldCupTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0274DAA28E5306200CF49DA /* WorldCupTableViewHeader.swift */; };
-		E0274DAD28E5D21500CF49DA /* WordCupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0274DAC28E5D21500CF49DA /* WordCupTableViewCell.swift */; };
+		E0274DAD28E5D21500CF49DA /* WorldCupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0274DAC28E5D21500CF49DA /* WorldCupTableViewCell.swift */; };
+		E05CA029290AD8200080A721 /* WorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CA028290AD8200080A721 /* WorldTableViewCell.swift */; };
 		E0DF1F5228E262AC00F564CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF1F5128E262AC00F564CC /* AppDelegate.swift */; };
 		E0DF1F5428E262AC00F564CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF1F5328E262AC00F564CC /* SceneDelegate.swift */; };
 		E0DF1F5628E262AC00F564CC /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF1F5528E262AC00F564CC /* HomeTableViewController.swift */; };
 		E0DF1F5B28E262AE00F564CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0DF1F5A28E262AE00F564CC /* Assets.xcassets */; };
 		E0DF1F5E28E262AE00F564CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0DF1F5C28E262AE00F564CC /* LaunchScreen.storyboard */; };
-		E0DF1F6E28E269D500F564CC /* WordCupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF1F6D28E269D500F564CC /* WordCupViewController.swift */; };
+		E0DF1F6E28E269D500F564CC /* WorldCupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF1F6D28E269D500F564CC /* WorldCupViewController.swift */; };
 		E0DF1F7128E26B0800F564CC /* WorldCup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF1F7028E26B0700F564CC /* WorldCup.swift */; };
 		E0DF1F7328E272F200F564CC /* winners.json in Resources */ = {isa = PBXBuildFile; fileRef = E0DF1F7228E272F200F564CC /* winners.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E0274DAA28E5306200CF49DA /* WorldCupTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCupTableViewHeader.swift; sourceTree = "<group>"; };
-		E0274DAC28E5D21500CF49DA /* WordCupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCupTableViewCell.swift; sourceTree = "<group>"; };
+		E0274DAC28E5D21500CF49DA /* WorldCupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCupTableViewCell.swift; sourceTree = "<group>"; };
+		E05CA028290AD8200080A721 /* WorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewCell.swift; sourceTree = "<group>"; };
 		E0DF1F4E28E262AC00F564CC /* CampeoesDaCopa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampeoesDaCopa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DF1F5128E262AC00F564CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0DF1F5328E262AC00F564CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +31,7 @@
 		E0DF1F5A28E262AE00F564CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0DF1F5D28E262AE00F564CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0DF1F5F28E262AE00F564CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0DF1F6D28E269D500F564CC /* WordCupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCupViewController.swift; sourceTree = "<group>"; };
+		E0DF1F6D28E269D500F564CC /* WorldCupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCupViewController.swift; sourceTree = "<group>"; };
 		E0DF1F7028E26B0700F564CC /* WorldCup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCup.swift; sourceTree = "<group>"; };
 		E0DF1F7228E272F200F564CC /* winners.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = winners.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,8 +107,9 @@
 			children = (
 				E0DF1F5528E262AC00F564CC /* HomeTableViewController.swift */,
 				E0274DAA28E5306200CF49DA /* WorldCupTableViewHeader.swift */,
-				E0274DAC28E5D21500CF49DA /* WordCupTableViewCell.swift */,
-				E0DF1F6D28E269D500F564CC /* WordCupViewController.swift */,
+				E0274DAC28E5D21500CF49DA /* WorldCupTableViewCell.swift */,
+				E0DF1F6D28E269D500F564CC /* WorldCupViewController.swift */,
+				E05CA028290AD8200080A721 /* WorldTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,11 +194,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0DF1F5628E262AC00F564CC /* HomeTableViewController.swift in Sources */,
-				E0DF1F6E28E269D500F564CC /* WordCupViewController.swift in Sources */,
-				E0274DAD28E5D21500CF49DA /* WordCupTableViewCell.swift in Sources */,
+				E0DF1F6E28E269D500F564CC /* WorldCupViewController.swift in Sources */,
+				E0274DAD28E5D21500CF49DA /* WorldCupTableViewCell.swift in Sources */,
 				E0DF1F7128E26B0800F564CC /* WorldCup.swift in Sources */,
 				E0DF1F5228E262AC00F564CC /* AppDelegate.swift in Sources */,
 				E0DF1F5428E262AC00F564CC /* SceneDelegate.swift in Sources */,
+				E05CA029290AD8200080A721 /* WorldTableViewCell.swift in Sources */,
 				E0274DAB28E5306200CF49DA /* WorldCupTableViewHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

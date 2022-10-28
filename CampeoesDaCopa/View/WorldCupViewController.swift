@@ -74,6 +74,15 @@ final class WorldCupViewController: UIViewController {
         return view
     }()
     
+    private lazy var tableView: UITableView = {
+        let table = UITableView()
+        table.dataSource = self
+        table.backgroundColor = .white
+        table.register(WorldTableViewCell.self, forCellReuseIdentifier: WorldTableViewCell.identifier)
+        table.translatesAutoresizingMaskIntoConstraints = false
+        return table
+    }()
+    
     //MARK: Construtor
     init(worldCup: WorldCup) {
         self.worldCup = worldCup
@@ -105,6 +114,7 @@ final class WorldCupViewController: UIViewController {
         view.addSubview(nameOponnentCountry)
         view.addSubview(trajectoryLabel)
         view.addSubview(dividerView)
+        view.addSubview(tableView)
     }
     
     private func configureConstraints() {
@@ -118,7 +128,7 @@ final class WorldCupViewController: UIViewController {
             opponentFlagImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40),
             opponentFlagImage.heightAnchor.constraint(equalToConstant: 58),
             opponentFlagImage.widthAnchor.constraint(equalToConstant: 84),
-
+            
             resultLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 46),
             resultLabel.leftAnchor.constraint(equalTo: flagImage.rightAnchor, constant: 50),
             resultLabel.rightAnchor.constraint(equalTo: opponentFlagImage.leftAnchor, constant: -50),
@@ -135,7 +145,12 @@ final class WorldCupViewController: UIViewController {
             dividerView.topAnchor.constraint(equalTo: trajectoryLabel.bottomAnchor, constant: 12),
             dividerView.leftAnchor.constraint(equalTo: view.leftAnchor),
             dividerView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            dividerView.heightAnchor.constraint(equalToConstant: 2)
+            dividerView.heightAnchor.constraint(equalToConstant: 2),
+            
+            tableView.topAnchor.constraint(equalTo: dividerView.bottomAnchor, constant: 10),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
@@ -160,5 +175,27 @@ final class WorldCupViewController: UIViewController {
     
     @objc private func backButtonAction() {
         dismiss(animated: true)
+    }
+}
+
+extension WorldCupViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return worldCup.matches.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let games = worldCup.matches[section].games
+        
+        return games.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //        let cell = UITableViewCell()
+        //        let data = worldCup.matches[indexPath.section].games[indexPath.row]
+        //        cell.textLabel?.text = "Teste"
+        //        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: WorldTableViewCell.identifier, for: indexPath)
+        return cell
     }
 }
