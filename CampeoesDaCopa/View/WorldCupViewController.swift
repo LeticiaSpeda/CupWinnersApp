@@ -10,6 +10,7 @@ import UIKit
 final class WorldCupViewController: UIViewController {
     
     var worldCup: WorldCup
+    var worldCups: [Game] = [] {didSet{updateList()}}
     
     private lazy var flagImage: UIImageView = {
         let image = UIImage(named: "\(worldCup.winner)")
@@ -75,10 +76,10 @@ final class WorldCupViewController: UIViewController {
     }()
     
     private lazy var tableView: UITableView = {
-        let table = UITableView()
+        let table = UITableView(frame: .zero, style: .grouped)
         table.dataSource = self
-        table.backgroundColor = .white
-        table.register(WorldTableViewCell.self, forCellReuseIdentifier: WorldTableViewCell.identifier)
+        table.backgroundColor = .clear
+        table.register(GamesTableViewCell.self, forCellReuseIdentifier: GamesTableViewCell.identifier)
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
@@ -184,6 +185,10 @@ extension WorldCupViewController: UITableViewDataSource {
         return worldCup.matches.count
     }
     
+    func updateList() {
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let games = worldCup.matches[section].games
         
@@ -191,11 +196,15 @@ extension WorldCupViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        let cell = UITableViewCell()
-        //        let data = worldCup.matches[indexPath.section].games[indexPath.row]
-        //        cell.textLabel?.text = "Teste"
-        //        return cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: WorldTableViewCell.identifier, for: indexPath)
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: GamesTableViewCell.identifier, for: indexPath) as? GamesTableViewCell {
+            
+            let match = worldCup.matches[indexPath.section]
+            let game = match.games[indexPath.row]
+            
+            cell.prepare(with: game)
+            
+            return cell
+        }
+        return UITableViewCell()
     }
 }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E0274DAB28E5306200CF49DA /* WorldCupTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0274DAA28E5306200CF49DA /* WorldCupTableViewHeader.swift */; };
 		E0274DAD28E5D21500CF49DA /* WorldCupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0274DAC28E5D21500CF49DA /* WorldCupTableViewCell.swift */; };
-		E05CA029290AD8200080A721 /* WorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CA028290AD8200080A721 /* WorldTableViewCell.swift */; };
+		E05CA029290AD8200080A721 /* GamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CA028290AD8200080A721 /* GamesTableViewCell.swift */; };
 		E0DF1F5228E262AC00F564CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF1F5128E262AC00F564CC /* AppDelegate.swift */; };
 		E0DF1F5428E262AC00F564CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF1F5328E262AC00F564CC /* SceneDelegate.swift */; };
 		E0DF1F5628E262AC00F564CC /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF1F5528E262AC00F564CC /* HomeTableViewController.swift */; };
@@ -23,7 +23,7 @@
 /* Begin PBXFileReference section */
 		E0274DAA28E5306200CF49DA /* WorldCupTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCupTableViewHeader.swift; sourceTree = "<group>"; };
 		E0274DAC28E5D21500CF49DA /* WorldCupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCupTableViewCell.swift; sourceTree = "<group>"; };
-		E05CA028290AD8200080A721 /* WorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewCell.swift; sourceTree = "<group>"; };
+		E05CA028290AD8200080A721 /* GamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewCell.swift; sourceTree = "<group>"; };
 		E0DF1F4E28E262AC00F564CC /* CampeoesDaCopa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampeoesDaCopa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DF1F5128E262AC00F564CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0DF1F5328E262AC00F564CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 				E0274DAA28E5306200CF49DA /* WorldCupTableViewHeader.swift */,
 				E0274DAC28E5D21500CF49DA /* WorldCupTableViewCell.swift */,
 				E0DF1F6D28E269D500F564CC /* WorldCupViewController.swift */,
-				E05CA028290AD8200080A721 /* WorldTableViewCell.swift */,
+				E05CA028290AD8200080A721 /* GamesTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 				E0DF1F7128E26B0800F564CC /* WorldCup.swift in Sources */,
 				E0DF1F5228E262AC00F564CC /* AppDelegate.swift in Sources */,
 				E0DF1F5428E262AC00F564CC /* SceneDelegate.swift in Sources */,
-				E05CA029290AD8200080A721 /* WorldTableViewCell.swift in Sources */,
+				E05CA029290AD8200080A721 /* GamesTableViewCell.swift in Sources */,
 				E0274DAB28E5306200CF49DA /* WorldCupTableViewHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
