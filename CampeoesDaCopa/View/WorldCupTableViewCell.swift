@@ -13,7 +13,7 @@ final class WorldCupTableViewCell: UITableViewCell {
     
     //MARK: Components
     private lazy var imageCalendar: UIImageView = {
-        let image = UIImage(named: "calendar")
+        let image = UIImage(named: Constants.worldCellImage.imageCalendar.rawValue)
         let view = UIImageView(image: image)
         view.contentMode = .scaleAspectFill
         view.enableViewCode()
@@ -22,7 +22,6 @@ final class WorldCupTableViewCell: UITableViewCell {
     
     private lazy var yearsLabel: UILabel = {
         let label = UILabel()
-        label.text = " "
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.enableViewCode()
@@ -30,7 +29,7 @@ final class WorldCupTableViewCell: UITableViewCell {
     }()
     
     private lazy var imageGlobal: UIImageView = {
-        let image  = UIImage(named: "globe")
+        let image  = UIImage(named: Constants.worldCellImage.imageGlobo.rawValue)
         let view = UIImageView(image: image)
         view.contentMode = .scaleAspectFill
         view.enableViewCode()
@@ -39,7 +38,6 @@ final class WorldCupTableViewCell: UITableViewCell {
     
     private lazy var countryLabel: UILabel = {
         let label = UILabel()
-        label.text = "Brasil"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 14, weight: .light)
         label.enableViewCode()

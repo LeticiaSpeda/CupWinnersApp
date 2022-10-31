@@ -12,7 +12,7 @@ final class WorldCupTableViewHeader: UITableViewHeaderFooterView {
     static let identifier = String(describing: WorldCupTableViewHeader.self)
     
     private lazy var imageHeader: UIImageView = {
-        let image = UIImage(named: "header")
+        let image = UIImage(named: Constants.worldHeaderImage.imageHeader.rawValue)
         let view = UIImageView(image: image)
         view.contentMode = .scaleAspectFill
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -42,7 +42,9 @@ final class WorldCupTableViewHeader: UITableViewHeaderFooterView {
             imageHeader.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageHeader.trailingAnchor.constraint(equalTo: trailingAnchor),
             imageHeader.heightAnchor.constraint(equalToConstant: 140),
-            imageHeader.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            imageHeader.topAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.topAnchor
+            ),
             bottomAnchor.constraint(equalTo: imageHeader.bottomAnchor)
         ])
     }

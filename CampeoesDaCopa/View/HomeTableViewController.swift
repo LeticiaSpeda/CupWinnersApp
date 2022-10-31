@@ -22,7 +22,7 @@ final class HomeTableViewController: UITableViewController {
     
     private func configureStyle() {
         view.backgroundColor = .white.withAlphaComponent(0.9)
-        navigationItem.title = "Campeões"
+        navigationItem.title = Constants.Home.title.rawValue
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .white.withAlphaComponent(0.5)
         appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
@@ -62,13 +62,13 @@ final class HomeTableViewController: UITableViewController {
             cell.update(word: worldCups[indexPath.row] )
             return cell
         }
-       
+        
         return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: WorldCupTableViewHeader.identifier) as? WorldCupTableViewHeader
-
+        
         return view
     }
     
